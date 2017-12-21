@@ -16,6 +16,10 @@ class Main2Activity : AppCompatActivity() {
         val btnPrintToast = findViewById<Button>(R.id.btnToast)
         val btnRunTimeException = findViewById<Button>(R.id.btnRunTimeException)
 
+/*
+
+*/
+
         btnPrintToast.setOnClickListener {
             var str = editText.text.toString()
             if (str.trim().isEmpty()) {
