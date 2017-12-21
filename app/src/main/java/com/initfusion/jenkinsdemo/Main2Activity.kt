@@ -29,10 +29,10 @@ class Main2Activity : AppCompatActivity() {
             if (str.trim().isEmpty()) {
                 str = "Please enter some value to editText and then try to throw exception"
             }
-//            throw RuntimeException(str)
-            Toast.makeText(this, str, Toast.LENGTH_SHORT).show()
+            throw RuntimeException(str)
+//            Toast.makeText(this, str, Toast.LENGTH_SHORT).show()
+            //From throw exception your app will be crashed with error message.
         }
     }
-
 
 }
