@@ -25,5 +25,9 @@
         android:layout_height="wrap_content"
         android:text="Run time exception" />
 
+    <Button
+
+        android:text="Here you might face an issue"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
