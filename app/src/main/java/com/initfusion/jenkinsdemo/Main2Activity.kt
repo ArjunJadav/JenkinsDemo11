@@ -2,10 +2,12 @@ package com.initfusion.jenkinsdemo
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+
 
 class Main2Activity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
@@ -16,12 +18,22 @@ class Main2Activity : AppCompatActivity(), View.OnClickListener {
             }
             Toast.makeText(this, str, Toast.LENGTH_SHORT).show()
         } else if (v == btnRunTimeException) {
+
+            /*   if(BuildConfig.DEBUG){
+                   var i: Intent? = Intent(Intent.ACTION_MAIN)
+                   val managerclock = packageManager
+                   i = managerclock.getLaunchIntentForPackage("com.initfusion.logosquiz")
+                   i!!.addCategory(Intent.CATEGORY_LAUNCHER)
+                   startActivity(i)
+                   return
+               }
+   */
             var str = editText?.text.toString()
             if (str.trim().isEmpty()) {
                 str = "Please enter some value to editText and then try to throw exception"
             }
-//            throw RuntimeException(str)
-            Toast.makeText(this, str, Toast.LENGTH_SHORT).show()
+            throw RuntimeException(str)
+//            Toast.makeText(this, str, Toast.LENGTH_SHORT).show()
             //From throw exception your app will be crashed with error message.
         }
     }
@@ -42,4 +54,9 @@ class Main2Activity : AppCompatActivity(), View.OnClickListener {
         btnRunTimeException?.setOnClickListener(this)
     }
 
+
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        Log.e(this.javaClass.simpleName, "onWindowFocusChanged=$hasFocus")
+        super.onWindowFocusChanged(hasFocus)
+    }
 }
